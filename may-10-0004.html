@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Web Page Example - user input</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome!</h1>
+
+  <p>Enter your name:</p>
+  <input type="text" id="nameInput" placeholder="Your name here" />
+  <button onclick="showGreeting()">Submit</button>
+
+  <h2 id="greetingMessage"></h2>
+
+  <script>
+    function showGreeting() {
+      const name = document.getElementById("nameInput").value;
+      const message = "Hello, " + name + "! Have a great day!";
+      document.getElementById("greetingMessage").innerText = message;
+    }
+  </script>
+</body>
+</html>

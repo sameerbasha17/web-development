@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time-Based Dynamic Web Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="greeting"></h1>
+
+  <script>
+    function showGreeting() {
+      const greetingElement = document.getElementById("greeting");
+      const date = new Date();
+      const hour = date.getHours(); // Gets current hour (0–23)
+      let message = "";
+
+      if (hour >= 5 && hour < 12) {
+        message = "Good Morning!";
+      } else if (hour >= 12 && hour < 17) {
+        message = "Good Afternoon!";
+      } else if (hour >= 17 && hour < 21) {
+        message = "Good Evening!";
+      } else {
+        message = "Good Night!";
+      }
+
+      greetingElement.textContent = message;
+    }
+
+    // Call the function when the page loads
+    showGreeting();
+  </script>
+</body>
+</html>
